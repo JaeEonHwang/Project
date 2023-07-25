@@ -3,7 +3,14 @@ from pprint import pprint
 
 
 def artist_info(artist):
-    # 여기에 코드를 작성합니다.    
+    # 여기에 코드를 작성합니다.
+    new_dict ={}
+    new_dict['genres_ids'] = artist['genres_ids']
+    new_dict['id'] = artist['id']
+    new_dict['images'] = artist['images']
+    new_dict['name'] = artist['name']
+    new_dict['type'] = artist['type']
+    return new_dict
     pass
 
 

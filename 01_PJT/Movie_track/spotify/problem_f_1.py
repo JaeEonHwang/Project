@@ -5,11 +5,22 @@
 
 import json
 from pprint import pprint
+import os
 
 
 def get_popular():
     # 여기에 코드를 작성합니다.
-    pass
+    artist_list = []
+    filenames = os.listdir('data/artists')
+    for filename in filenames:
+        file = open(f'data/artists/{filename}', encoding='utf-8')
+        file_list = json.load(file)
+        if 5000000 < file_list['followers']['total'] < 10000000:
+            empty_dict = {}
+            empty_dict['follwers'] = file_list['followers']['total']
+            empty_dict['name'] = file_list['name']
+            artist_list.append(empty_dict)
+    return artist_list
 
 
 # 아래의 코드는 수정하지 않습니다.
